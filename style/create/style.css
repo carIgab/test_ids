@@ -1,0 +1,246 @@
+.content_create{
+    display: none;
+}
+.create_page[page='base'] .base_create{
+    display: flex;
+}
+.create_page[page='earning'] .earning_create{
+    display: flex;
+}
+.create_page[page='flow'] .flow_create{
+    display: flex;
+}
+.create_page[page='record'] .record_create{
+    display: flex;
+}
+.create_page[page='report'] .report_create{
+    display: flex;
+}
+.create_page{
+    gap: 20px;
+    flex-direction: row;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.content_page .menu_create{
+    height: 100%;
+    width: 8.25%;
+    background: var(--color-elements);
+    gap: 20px;
+}
+.menu_create .nav_create{
+    width: 60px;
+    height: 60px;
+    transition: 1s;
+    filter: blur(10px);
+    transform: scale(0.9);
+    opacity: 0.75;
+}
+.menu_create .nav_create:hover{
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+.menu_create .slt_create{
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+.active ~ .box_page .nav_create{
+    width: 50px;
+    height: 50px;
+}
+.nav_create img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.content_page .content_create{
+    height: 100%;
+    width: 88%;
+    background: var(--color-elements);
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 25px;
+}
+.content_page .form_create {
+    justify-content: center;
+    gap: 45px;
+    width: 100%;
+}
+.content_create .header_form{
+    width: 100%;
+    height: 100px;
+    color: var(--color-text);
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+.header_form .box_icon_form{
+    flex-direction: row;
+    gap: 5px;
+}
+.header_form h2{
+    font-size: 22px;
+    letter-spacing: 0.75px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+.header_form .logo_create{
+    width: 85px;
+    height: 85px;
+    display: none;
+    transition: 1s;
+}
+.content_create .logo_black_create{
+    display: flex;
+}
+body.light .content_create .logo_light_create{
+    display: flex;
+}
+body.light .content_create .logo_black_create{
+    display: none;
+}
+.box_icon_form .icon_form{
+    font-size: 1.72em;
+    width: 55px;
+    height: 55px;
+    transition: 0.5;
+}
+.box_icon_form .mark_form_base,.box_icon_form .mark_form_earning,
+.box_icon_form .mark_form_flow,.box_icon_form .mark_form_record,
+.box_icon_form .mark_form_report{
+    background: var(--color-primary);
+    border-radius: 5px;
+    color: #fafafa;
+}
+.form_create .space_form{
+    width: 100%;
+    gap: 5px;
+}
+.space_form h2{
+    color: var(--color-text);
+    width: 100%;
+    margin-left: 40px;
+}
+.space_form .box_ipts{
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.box_ipts input, select{
+    font-size: 18px;
+    padding: 10px;
+    background: var(--color-elements);
+    border: 1px solid var(--color-elements);
+    outline: none;
+    border-bottom: 1px solid var(--color-text);
+    width: 27%; 
+    color: var(--color-text);
+    transition: 1s;
+    
+}
+.box_ipts input:focus, select:focus{
+    border-bottom: 1px solid var(--color-primary);
+    width: 30%; 
+}
+.box_ipts input[type="date"]::-webkit-calendar-picker-indicator, 
+.box_ipts input[type="week"]::-webkit-calendar-picker-indicator,
+.box_ipts input[type="month"]::-webkit-calendar-picker-indicator{
+    filter: invert(0.9) brightness(100%) sepia(10%) saturate(0%) hue-rotate(30deg);
+}
+body.light .box_ipts input[type="date"]::-webkit-calendar-picker-indicator,
+body.light .box_ipts input[type="week"]::-webkit-calendar-picker-indicator,
+body.light .box_ipts input[type="month"]::-webkit-calendar-picker-indicator{
+    filter: invert(0.8) brightness(10%) sepia(90%) saturate(100%) hue-rotate(20deg);
+}
+
+.content_page .report_create{
+    gap: 10px;
+}
+.report_create .form_report{
+    gap: 0px;
+}
+.report_create input{
+    width: 21%;
+}
+.report_create .box_ipts input:focus{
+    border-bottom: 1px solid var(--color-primary);
+    width: 23%; 
+}
+.form_report .box_ipts{
+    margin-bottom: 35px;
+}
+
+.box_icon_form .del_form{
+    display: none;
+    transition-delay: 1s;
+}
+
+.content_create .report_tab{
+    justify-content: center;
+    gap: 45px;
+    width: 100%;
+    gap: 0px;
+    display: none;
+}
+.content_create .hearder_report{
+    gap: 30px;
+    flex-direction: row;
+}
+.hearder_report .icon_report{
+    height: 50px;
+    width: 60px;
+    font-size: 1.4em;
+}
+
+.content_create .tab_rpt{
+    width: 100%;
+    height: 440px;
+    padding: 0 15px;
+    justify-content: start;
+   
+} 
+.form_report .view_report{
+    display: flex;
+}
+/* table  */
+table,th, td{
+    padding: 0.47rem;
+    border-collapse: collapse;
+    border: 1px solid var(--color-info);
+}
+table{
+    overflow: hidden;
+    color: var(--color-text);
+}
+thead th{
+    position: sticky;
+    background: var(--color-info);
+    text-align: center;
+    border: none;
+    top: 0;
+    left: 0;
+    font-weight: 300;
+    font-size: 20px;
+}
+table td{
+    text-align: center;
+}
+.tab_rpt td input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    outline: none;
+    color: var(--color-text);
+    border: none;
+    font-size: 17px;
+    padding: 2.5px;
+    text-align: center;
+}
+
+

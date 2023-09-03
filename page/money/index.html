@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/money/style.css">
+</head>
+<body page="money">
+    <nav class="menu elts">
+        <div class="box_logo elts">
+            <img class="logo_img" src="../../img/menu/logo_black.png" alt="">
+            <span>IDS</span>
+        </div>
+        <ul class="nav_icons elts">
+            <li class="icon elts" onclick="change_page('home')">
+                <ion-icon id="nav" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon mark elts" onclick="change_page('money')">
+                <ion-icon id="nav" name="cash-outline"></ion-icon>
+                <span>Money</span>
+            </li>
+            <li class="icon elts" onclick="change_page('create')">
+                <ion-icon id="nav" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon elts" onclick="change_page('data')">
+                <ion-icon id="nav" name="albums-outline"></ion-icon>
+                <span>Data</span>
+            </li>
+        </ul>
+        <ul class="nav_action elts">
+            <li class="icon elts" id="nv_contrast" onclick="change_colors('data')">
+                <ion-icon id="nav" name="contrast-outline"></ion-icon>
+                <span>Contrast</span>
+            </li>
+            <li class="icon elts" onclick="">
+                <ion-icon id="nav" name="log-out-outline"></ion-icon>
+                <span>Log_Out</span>
+            </li>
+        </ul>
+    </nav>
+    <main class="box_page elts">
+        <header class="header_page elts">
+            <dix class="box_header elts">
+                <h2>Money</h2>
+                <div class="box_search elts">
+                    <ion-icon id='icon_search' name="search-outline"></ion-icon>
+                    <input type="search" id="ipt_search_home" placeholder="Search..." onchange="search_page('home')">
+                </div>
+            </dix>
+
+            <ul class="box_btn elts">
+                <li class="btn_menu elts" onclick="active_menu()">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+                <li class="btn_menu elts" onclick="">
+                    <ion-icon name="cellular-outline"></ion-icon>
+                </li>
+                <li class="btn_menu elts" onclick="">
+                    <ion-icon name="calculator-outline"></ion-icon>
+                </li>
+                <div class="img_header">
+                    <img src="../../img/menu/icon.png" alt="">
+                </div>
+            </ul>
+
+            
+        </header>
+
+        <section class="camp_search elts" id="camp_search_money">
+            <header class="header_search elts">
+                <h2>Search...</h2>
+                <div class="exit_search elts" onclick="search_page('money','exit')">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </header>
+            <div class="content_search elts" id="content_search_money">
+             
+            </div>
+        </section>
+
+        <section class="content_page money_page elts" page="payout">
+
+            <section class="content_money payout_money elts">
+                <section class="header_money elts">
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="today-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Year</h3>
+                            <select name="" id="">
+                                <option value="">2022</option>
+                                <option value="">2023</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="trending-up-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Input</h3>
+                            <span>R$ 2000</span>
+                        </div>
+                    </div>
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="trending-down-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Output</h3>
+                            <span>R$ 2000</span>
+                        </div>
+                    </div>
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="flag-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Profit</h3>
+                            <span>R$ 2000</span>
+                        </div>
+                    </div>
+                    
+                </section>
+                <section class="space_money elts">
+                    <div class="patr_money elts">
+                        <div class="graphic_patr elts">
+                            <canvas id="myChart_patrimory"></canvas>
+                        </div>
+                        
+                    </div>
+                    <div class="space_graphic_flow elts">
+                        <div class="graphic_flow elts">
+                            <span>Graphic Tips Flow</span>
+                            <canvas id="myChart_tipsFlow"></canvas>
+                        </div>
+                        <div class="graphic_flow elts">
+                            <span>Graphic Tips Output</span>
+                            <canvas id="myChart_tipsOutput"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+            </section>
+
+            <section class="content_money analysis_money elts">
+                <section class="space_carousel elts">
+
+                </section>
+                <section class="space_money elts">
+                    <div class="box_mny elts">
+                        <h2>Box Analysis</h2>
+                        <select id="slct_anlys_year">
+                            <option value="2023">2023</option>
+                        </select>
+                        <select id="slct_anlys_tips">
+                            <option value="Tips">Tips</option>
+                        </select>
+                        <section class="analsis_opt elts">
+                            <div class="screen_opt_alys">
+
+                            </div>
+                            <div class="ind_screen_alys"></div>
+                        </section>
+                    </div>
+                    <section class="ctt_analysis elts">
+                        <section class="box_info elts">
+                            <div class="analysis_info elts">
+                                <ion-icon  id='icon_my' name="analytics-outline"></ion-icon>
+                                <div class="info_my elts">
+                                    <h3>Valuation</h3>
+                                    <span>R$ 2000</span>
+                                </div>
+                            </div>
+                            <div class="analysis_info elts">
+                                <ion-icon  id='icon_my' name="server-outline"></ion-icon>
+                                <div class="info_my elts">
+                                    <h3>Earning</h3>
+                                    <span>R$ 2000</span>
+                                </div>
+                            </div>
+                            <div class="analysis_info elts">
+                                <ion-icon id='icon_my' name="ribbon-outline"></ion-icon>
+                                <div class="info_my elts">
+                                    <h3>Return</h3>
+                                    <span>R$ 2000</span>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="graphic_analysis elts">
+                           <canvas id="myChart_analysis"></canvas>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <section class="content_money active_money elts">
+                <section class="box_mny elts">
+                    <select id="slct_act_tips">
+                        <option value="Stock">Stock</option>
+                    </select>
+                    <select id="slct_act_segment">
+                        <option value="Energia">Energia</option>
+                    </select>
+                    <div class="elts">
+                        <h3>Total invest</h3>
+                        <span>R$ 2000</span>
+                    </div>
+                    <section class="graphic_segment elts">
+                        <canvas id="myChart_segment"></canvas>
+                    </section>
+                </section>
+                <section class="content_active elts">
+                    <section class="graphic_active elts">
+                        <canvas id="myChart_active"></canvas>
+                    </section>
+                    <section class="position_active elts">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Empresa</th>
+                                    <th>Qtde</th>
+                                    <th>Preço</th>
+                                    <th>Total</th>
+                                    <th>%P</th>
+                                    <th>%P Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>KLBN4</td>
+                                    <td>Klabin</td>
+                                    <td>4</td>
+                                    <td>3.75</td>
+                                    <td>15</td>
+                                    <td>10%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>KLBN4</td>
+                                    <td>Klabin</td>
+                                    <td>4</td>
+                                    <td>3.75</td>
+                                    <td>15</td>
+                                    <td>10%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>KLBN4</td>
+                                    <td>Klabin</td>
+                                    <td>4</td>
+                                    <td>3.75</td>
+                                    <td>15</td>
+                                    <td>10%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>KLBN4</td>
+                                    <td>Klabin</td>
+                                    <td>4</td>
+                                    <td>3.75</td>
+                                    <td>15</td>
+                                    <td>10%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>KLBN5</td>
+                                    <td>Klabin</td>
+                                    <td>4</td>
+                                    <td>3.75</td>
+                                    <td>15</td>
+                                    <td>10%</td>
+                                    <td>2%</td>
+                                </tr>
+                                <tr>
+                                    <td>KLBN6</td>
+                                    <td>Klabin</td>
+                                    <td>4</td>
+                                    <td>3.75</td>
+                                    <td>15</td>
+                                    <td>10%</td>
+                                    <td>2%</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+            </section>
+
+            <section class="content_money wallet_money elts">
+                <section class="header_money elts">
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="today-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Year</h3>
+                            <select name="" id="">
+                                <option value="">2022</option>
+                                <option value="">2023</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="trending-up-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Valuation</h3>
+                            <span>R$ 2000</span>
+                        </div>
+                    </div>
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="trending-down-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Earning</h3>
+                            <span>R$ 2000</span>
+                        </div>
+                    </div>
+                    <div class="box_info elts">
+                        <ion-icon id='icon_my' name="flag-outline"></ion-icon>
+                        <div class="info_my elts">
+                            <h3>Profit</h3>
+                            <span>R$ 2000</span>
+                        </div>
+                    </div>
+                    
+                </section>
+                <section class="main_wallet elts">
+                    <div class="graphic_wallet"></div>
+                    <div class="position_wallet"></div>
+                </section>
+
+            </section>
+
+            <section class="content_money earning_money elts">Earning</section>
+            
+
+            <ul class="menu_money elts">
+                <div class="nav_money payout_nav elts slt_money" onclick="change_tab('money','payout')">
+                    <ion-icon name="pie-chart-outline"></ion-icon>
+                </div>
+                <div class="nav_money analysis_nav elts" onclick="change_tab('money','analysis')">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                </div>
+                <div class="nav_money active_nav elts" onclick="change_tab('money','active')">
+                    <ion-icon name="layers-outline"></ion-icon>
+                </div>
+                <div class="nav_money wallet_nav elts" onclick="change_tab('money','wallet')">
+                    <ion-icon name="wallet-outline"></ion-icon>
+                </div>
+                <div class="nav_money earning_nav elts" onclick="change_tab('money','earning')">
+                    <ion-icon name="server-outline"></ion-icon>
+                </div>
+            </ul>
+           
+        </section>
+
+    </main>
+
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/action/page.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const chart_patrimony = document.getElementById('myChart_patrimory');
+        let gpc_patrimony_home = new Chart(chart_patrimony, {
+            type: 'line',
+            data: {
+                labels: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun','jul', 'ago', 'set', 'out', 'nov', 'dez'],
+                datasets: [{
+                    label: 'R$',
+                    data: [12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3],
+                    borderWidth: 1,
+                    backgroundColor:['#0693e3'],
+                    fill: false,
+                    borderColor: '#0693e3',
+                    tension: 0.2,
+                    pointBorderWidth:1,
+
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            
+                        },
+                    },
+                  y: {
+                    display:false,
+                    drawBorder: false,
+                        beginAtZero: true ,
+                        grid: {
+                            display: false,
+                          
+                        },
+                    },
+                 
+                },
+                plugins: {
+                    legend: {
+                        display: false, 
+                    },
+                    
+                    
+                    
+                }
+            }
+        });
+        const chart_payout_money = document.getElementById('myChart_tipsFlow');
+        let gpc_payout_money = new Chart(chart_payout_money, {
+                type: 'doughnut',
+                data: {
+                labels: ['Input', 'Output'],
+                datasets: [{
+                    label: 'R$',
+                    data: [12,20],
+                    backgroundColor: [
+                        '#36a2eb',
+                        '#ff6384'
+                        
+                    ],
+                    borderWidth: 1,
+                }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            display:false,
+                            grid: {
+                                display: false,
+                                
+                            },
+                        },
+                        y: {
+                          display:false,
+                            beginAtZero: true ,
+                            grid: {
+                                display: false,
+                                
+                            },
+                        },
+                       
+                    },
+                    plugins: {
+                        legend: {
+                            display: false ,
+                            
+                        },
+                        
+                    }
+                }
+            }); 
+            
+        const a = document.getElementById('myChart_tipsOutput');
+        let b = new Chart(a, {
+                type: 'doughnut',
+                data: {
+                labels: ['Input', 'Output'],
+                datasets: [{
+                    label: 'R$',
+                    data: [12,20],
+                    backgroundColor: [
+                        '#36a2eb',
+                        '#ff6384'
+                        
+                    ],
+                    borderWidth: 1,
+                }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            display:false,
+                            grid: {
+                                display: false,
+                                
+                            },
+                        },
+                        y: {
+                          display:false,
+                            beginAtZero: true ,
+                            grid: {
+                                display: false,
+                                
+                            },
+                        },
+                       
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                             
+                        }
+                    }
+                }
+            }); 
+
+
+            const chart_analysis = document.getElementById('myChart_analysis');
+            let gpc_analysis = new Chart(chart_analysis, {
+            type: 'line',
+            data: {
+                labels: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun','jul', 'ago', 'set', 'out', 'nov', 'dez'],
+                datasets: [{
+                    label: 'R$',
+                    data: [12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3,12, 19, 3, 5, 2, 3],
+                    borderWidth: 1,
+                    backgroundColor:['#0693e3'],
+                    fill: false,
+                    borderColor: '#0693e3',
+                    tension: 0.2,
+                    pointBorderWidth:1,
+
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            
+                        },
+                    },
+                  y: {
+                    display:false,
+                    drawBorder: false,
+                        beginAtZero: true ,
+                        grid: {
+                            display: false,
+                          
+                        },
+                    },
+                 
+                },
+                plugins: {
+                    legend: {
+                        display: false, 
+                    },
+                    
+                    
+                    
+                }
+            }
+        });
+        
+        const d = document.getElementById('myChart_segment');
+        let e = new Chart(d, {
+                type: 'doughnut',
+                data: {
+                labels: ['Input', 'Output'],
+                datasets: [{
+                    label: 'R$',
+                    data: [12,20],
+                    backgroundColor: [
+                        '#36a2eb',
+                        '#ff6384'
+                        
+                    ],
+                    borderWidth: 1,
+                }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            display:false,
+                            grid: {
+                                display: false,
+                                
+                            },
+                        },
+                        y: {
+                          display:false,
+                            beginAtZero: true ,
+                            grid: {
+                                display: false,
+                                
+                            },
+                        },
+                       
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                             
+                        }
+                    }
+                }
+            }); 
+
+            const f = document.getElementById('myChart_active');
+            let g = new Chart(f, {
+                    type: 'doughnut',
+                    data: {
+                    labels: ['Input', 'Output'],
+                    datasets: [{
+                        label: 'R$',
+                        data: [12,20],
+                        backgroundColor: [
+                            '#36a2eb',
+                            '#ff6384'
+                            
+                        ],
+                        borderWidth: 1,
+                        
+                    }]
+                    },
+                    options: {
+                        scales: {
+                            x: {
+                                display:false,
+                                grid: {
+                                    display: false,
+                                    
+                                },
+                            },
+                            y: {
+                            display:false,
+                                beginAtZero: true ,
+                                grid: {
+                                    display: false,
+                                    
+                                },
+                            },
+                        
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'right',
+                                labels:{
+                                    padding: 15,
+                                    color: '#868686'
+                                }
+                                
+                            }
+                        }
+                    }
+                }); 
+    </script>
+</body>
+</html>

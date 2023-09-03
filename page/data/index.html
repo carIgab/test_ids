@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/new/style.css">
+</head>
+<body>
+    <nav class="menu elts">
+        <div class="box_logo elts">
+            <img class="logo_img" src="../../img/menu/logo_black.png" alt="">
+            <span>IDS</span>
+        </div>
+        <ul class="nav_icons elts">
+            <li class="icon elts" onclick="change_page('home')">
+                <ion-icon id="nav" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon elts" onclick="change_page('money')">
+                <ion-icon id="nav" name="cash-outline"></ion-icon>
+                <span>Money</span>
+            </li>
+            <li class="icon  elts" onclick="change_page('create')">
+                <ion-icon id="nav" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon mark elts" onclick="change_page('data')">
+                <ion-icon id="nav" name="albums-outline"></ion-icon>
+                <span>Data</span>
+            </li>
+        </ul>
+        <ul class="nav_action elts">
+            <li class="icon elts" id="nv_contrast" onclick="change_colors('data')">
+                <ion-icon id="nav" name="contrast-outline"></ion-icon>
+                <span>Contrast</span>
+            </li>
+            <li class="icon elts" onclick="">
+                <ion-icon id="nav" name="log-out-outline"></ion-icon>
+                <span>Log_Out</span>
+            </li>
+        </ul>
+    </nav>
+    <main class="box_page elts">
+        <header class="header_page elts">
+            <dix class="box_header elts">
+                <h2>Data</h2>
+                <div class="box_search elts">
+                    <ion-icon id='icon_search' name="search-outline"></ion-icon>
+                    <input type="search" id="ipt_search_home" placeholder="Search..." onchange="search_page('home')">
+                </div>
+            </dix>
+
+            <ul class="box_btn elts">
+                <li class="btn_menu elts" onclick="active_menu()">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </li>
+                <li class="btn_menu elts" onclick="">
+                    <ion-icon name="cellular-outline"></ion-icon>
+                </li>
+                <li class="btn_menu elts" onclick="">
+                    <ion-icon name="calculator-outline"></ion-icon>
+                </li>
+                <div class="img_header">
+                    <img src="../../img/menu/icon.png" alt="">
+                </div>
+            </ul>
+
+            
+        </header>
+
+        <section class="content_page elts">
+            
+        </section>
+
+        <section class="camp_search elts" id="camp_search_home">
+            <header class="header_search elts">
+                <h3>Search...</h3>
+                <div class="exit_search elts" onclick="search_page('home','exit')">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </header>
+            <div class="content_search">
+                
+            </div>
+        </section>
+    </main>
+
+
+    <script src="../../app/action/page.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

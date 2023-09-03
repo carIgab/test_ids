@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/create/style.css">
+</head>
+<body page="create">
+
+    <nav class="menu elts">
+        <div class="box_logo elts">
+            <img class="logo_img" src="../../img/menu/logo_black.png" alt="">
+            <span>IDS</span>
+        </div>
+        <ul class="nav_icons elts">
+            <li class="icon elts" onclick="change_page('home')">
+                <ion-icon id="nav" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon elts" onclick="change_page('money')">
+                <ion-icon id="nav" name="cash-outline"></ion-icon>
+                <span>Money</span>
+            </li>
+            <li class="icon mark elts" onclick="change_page('create')">
+                <ion-icon id="nav" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon elts" onclick="change_page('data')">
+                <ion-icon id="nav" name="albums-outline"></ion-icon>
+                <span>Data</span>
+            </li>
+        </ul>
+        <ul class="nav_action elts">
+            <li class="icon elts" id="nv_contrast" onclick="change_colors('data')">
+                <ion-icon id="nav" name="contrast-outline"></ion-icon>
+                <span>Contrast</span>
+            </li>
+            <li class="icon elts" onclick="">
+                <ion-icon id="nav" name="log-out-outline"></ion-icon>
+                <span>Log_Out</span>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="box_page elts">
+        <header class="header_page elts">
+            <dix class="box_header elts">
+                <h2>New</h2>
+                <div class="box_search elts">
+                    <ion-icon id='icon_search' name="search-outline"></ion-icon>
+                    <input type="search" id="ipt_search_home" placeholder="Search..." onkeyup="search_page('create')">
+                </div>
+            </dix>
+
+            <ul class="box_btn elts">
+                <li class="btn_menu elts" onclick="active_menu()">
+                    <ion-icon id='icn_menu' name="menu-outline"></ion-icon>
+                </li>
+                <li class="btn_menu elts" onclick="">
+                    <ion-icon name="cellular-outline"></ion-icon>
+                </li>
+                <li class="btn_menu btn_calc elts" onclick="active_calc()">
+                    <ion-icon id='icn_calc' name="calculator-outline"></ion-icon>
+                </li>
+                <div class="img_header">
+                    <img src="../../img/menu/icon.png" alt="">
+                </div>
+            </ul>
+
+            
+        </header>
+
+        <section class="camp_calculator elts" >
+            <form class="calculator" name="calc">
+                <input type="text" readonly class="value" name="txt">
+                <span class="num clear" onclick="calc.txt.value=''">Clear</span>
+                <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+                <span class="num" onclick="document.calc.txt.value +='*'">*</span>
+                <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+                <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+                <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+                <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+                <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+                <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+                <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+                <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+                <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+                <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+                <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+                <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+                <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+                <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+                <span class="num equal" onclick="document.calc.txt.value =eval(calc.txt.value)">=</span>
+            </form>
+        </section>
+        <section class="camp_search elts" id="camp_search_create">
+            <header class="header_search elts">
+                <h2>Search...</h2>
+                <div class="exit_search elts" onclick="search_page('home','exit')">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </header>
+            <div class="content_search elts" id="content_search_create">
+             
+            </div>
+        </section>
+
+        <section class="content_page create_page elts" page="base">
+            <section class="content_create base_create elts">
+                <header class="header_form elts">
+                    <div class="box_icon_form elts" style="gap:25px">
+                        <img class="logo_black_create logo_create" src="../../img/create/logo_black.png" alt="">
+                        <img class="logo_light_create logo_create" src="../../img/create/logo_light.png" alt="">
+                        <h2>Base</h2>
+                    </div>
+                    <div class="box_icon_form elts">
+                        <div class="icon_form elts mark_form_base base_data" onclick="change_form('base','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts base_search" onclick="change_form('base','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts base_modify" onclick="change_form('base','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts command_base" onclick="reset('base')">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts delete_base del_form" onclick="del('base')">
+                            <ion-icon name="trash-bin-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts base_action" onclick="add('base')">
+                            <ion-icon name="cloud-done-outline"></ion-icon>
+                        </div>
+                        
+                    </div>
+                </header>
+
+                <form class="form_base form_create elts"> 
+                    <div class="space_form elts">
+                        <h2>Company</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_base_1" onchange="authenticate_active()" placeholder="Enter code">
+                            <select class="ipt_base_2">
+                                <option value="Ação">Ação</option>
+                                <option value="FII">FII</option>
+                                <option value="Tesouro">Tesouro</option>
+                            </select>
+                            <input type="text" class="ipt_base_3" placeholder="Enter company">
+                        </div>
+                       
+                    </div>
+                     <div class="space_form elts">
+                        <h2>Information</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_base_4" placeholder="Enter CNPJ">
+                            <input type="url" class="ipt_base_5" placeholder="Enter review">
+                            <input type="url" class="ipt_base_6" placeholder="Enter RI">
+                        </div>
+                       
+                    </div>
+                    <div class="space_form elts">
+                        <h2>Characteristic</h2>
+                        <div class="box_ipts elts">
+                            <select class="ipt_base_7">
+                                <option value="Dividendo">Dividend</option>
+                                <option value="Valuation">Valuation</option>
+                                <option value="Both">Both</option>
+                                <option value="Bet">Bet</option>
+                                <option value="Safe">Safe</option>
+                            </select>
+                            <input type="text" class="ipt_base_8" placeholder="Enter sector">
+                            <input type="text" class="ipt_base_9" placeholder="Enter segment">
+                        </div>
+                       
+                    </div>
+
+                </form>
+               
+            </section>
+
+            <section class="content_create earning_create ">
+                <header class="header_form elts">
+                    <div class="box_icon_form elts" style="gap:25px">
+                        <img class="logo_black_create logo_create" src="../../img/create/logo_black.png" alt="">
+                        <img class="logo_light_create logo_create" src="../../img/create/logo_light.png" alt="">
+                        <h2>Earning</h2>
+                    </div>
+                    <div class="box_icon_form elts">
+                        <div class="icon_form elts mark_form_earning earning_data" onclick="change_form('earning','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts earning_search" onclick="change_form('earning','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts earning_modify" onclick="change_form('earning','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts command_earning" onclick="reset('earning')">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts delete_earning del_form" onclick="del('earning')">
+                            <ion-icon name="trash-bin-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts earning_action" onclick="add('earning')">
+                            <ion-icon name="cloud-done-outline"></ion-icon>
+                        </div>
+                        
+                    </div>
+                </header>
+
+                <form class="form_earning form_create elts"> 
+                    <div class="space_form elts">
+                        <h2>Information Earning</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_earning_1 order_earning" readonly>
+                            <input type="date" class="ipt_earning_2" ">
+                            <select class="ipt_earning_3">
+                                <option value="Dividend">Dividend</option>
+                                <option value="JCP">JCP</option>
+                                <option value="Fees">Fees</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Bonus">Bonus</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                     <div class="space_form elts">
+                        <h2>Active</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_earning_4" placeholder="Enter code" onchange="authenticate_active()">
+                            <input type="text" class="ipt_earning_5" readonly placeholder="Name company">
+                            <input type="text" class="ipt_earning_6" readonly placeholder="Total invest">
+                        </div>
+                       
+                    </div>
+                    <div class="space_form elts">
+                        <h2>Values</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_earning_7" placeholder="Enter Value" onchange="count_form('earning')">
+                            <input type="number" class="ipt_earning_8" placeholder="Qtds" readonly>
+                            <input type="text" class="ipt_earning_9" placeholder="Total" readonly>
+                        </div>
+                       
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="content_create flow_create">
+                <header class="header_form elts">
+                    <div class="box_icon_form elts" style="gap:25px">
+                        <img class="logo_black_create logo_create" src="../../img/create/logo_black.png" alt="">
+                        <img class="logo_light_create logo_create" src="../../img/create/logo_light.png" alt="">
+                        <h2>Flow</h2>
+                    </div>
+                    <div class="box_icon_form elts">
+                        <div class="icon_form elts mark_form_flow flow_data" onclick="change_form('flow','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts flow_search" onclick="change_form('flow','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts flow_modify" onclick="change_form('flow','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts command_flow" onclick="reset('flow')">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts delete_flow del_form" onclick="del('flow')">
+                            <ion-icon name="trash-bin-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts flow_action" onclick="add('flow')">
+                            <ion-icon name="cloud-done-outline"></ion-icon>
+                        </div>
+                        
+                    </div>
+                </header>
+
+                <form class="form_flow form_create elts"> 
+                    <div class="space_form elts">
+                        <h2>Information Flow</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_flow_1" readonly>
+                            <input type="date" class="ipt_flow_2" >
+                            <select class="ipt_flow_3" onchange="search_flow('tips')">
+                                <option value="Input">Input</option>
+                                <option value="Output">Output</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                     <div class="space_form elts">
+                        <h2>Flow</h2>
+                        <div class="box_ipts elts">
+                            <select class="ipt_flow_4" onchange="search_flow('area')">
+                                <option value="Work">Work</option>
+                                <option value="Bonus">Bonus</option>
+                                <option value="Extra">Extra</option>
+                            </select>
+                            <select class="ipt_flow_5">
+                                <option value="Salary">Salary</option>
+                                <option value="Overtime">Overtime</option>
+                                <option value="Commission">Commission</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <input type="text" class="ipt_flow_6" placeholder="Enter source">
+                        </div>
+                       
+                    </div>
+                    <div class="space_form elts">
+                        <h2>Characteristic</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_flow_7" placeholder="Enter name">
+                            <select class="ipt_flow_8">
+                                <option value="Usual">Usual</option>
+                                <option value="Eventual">Eventual</option>
+                                <option value="Rare">Rare</option>
+                               
+                            </select>
+                            <input type="text" class="ipt_flow_9" placeholder="Enter value">
+                        </div>
+                       
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="content_create record_create">
+                <header class="header_form elts">
+                    <div class="box_icon_form elts" style="gap:25px">
+                        <img class="logo_black_create logo_create" src="../../img/create/logo_black.png" alt="">
+                        <img class="logo_light_create logo_create" src="../../img/create/logo_light.png" alt="">
+                        <h2>Record</h2>
+                    </div>
+                    <div class="box_icon_form elts">
+                        <div class="icon_form elts mark_form_record record_data" onclick="change_form('record','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts record_search" onclick="change_form('record','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts record_modify" onclick="change_form('record','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts command_record" onclick="reset('record')">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts delete_record del_form" onclick="del('record')">
+                            <ion-icon name="trash-bin-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts record_action" onclick="add('record')">
+                            <ion-icon name="cloud-done-outline"></ion-icon>
+                        </div>
+                        
+                    </div>
+                </header>
+
+                <form class="form_record form_create elts"> 
+                    <div class="space_form elts">
+                        <h2>Information Record</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_record_1" readonly>
+                            <input type="text" class="ipt_record_2" placeholder="Enter request">
+                            <input type="date" class="ipt_record_3" >
+                        </div>
+                    </div>
+                     <div class="space_form elts">
+                        <h2>Information Purchase</h2>
+                        <div class="box_ipts elts">
+                            <select class="ipt_record_4">
+                                <option value="Purchase">Purchase</option>
+                                <option value="Sale">Sale</option>
+                            </select>
+                            <input type="text" class="ipt_record_5" placeholder="Enter code" onchange="authenticate_active()">
+                            <input type="text" class="ipt_record_6" placeholder="Enter total">
+                        </div>
+                    </div>
+                    <div class="space_form elts">
+                        <h2>Purcharse</h2>
+                        <div class="box_ipts elts">
+                            <input type="text" class="ipt_record_7" placeholder="Enter Value" onchange="count_form('record')">
+                            <input type="number" class="ipt_record_8" placeholder="Enter QTDE" onchange="count_form('record')">
+                            <input type="text" class="ipt_record_9" placeholder="Subtotal" readonly>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="content_create report_create">
+                <header class="header_form elts">
+                    <div class="box_icon_form elts" style="gap:25px">
+                        <img class="logo_black_create logo_create" src="../../img/create/logo_black.png" alt="">
+                        <img class="logo_light_create logo_create" src="../../img/create/logo_light.png" alt="">
+                    </div>
+
+                    <div class="hearder_report elts">
+                        <div class="icon_report elts" onclick="tab_report('back')">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </div>
+                        <div class="text_hearder_report elts">
+                            <h2>Report</h2>
+                            <span id="index_report">Page 1 the 2</span>
+                        </div>
+                        <div class="icon_report elts" onclick="tab_report('front')">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="box_icon_form elts">
+                        <div class="icon_form elts mark_form_report report_data" onclick="change_form('report','data')">
+                            <ion-icon name="cloud-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts report_search" onclick="change_form('report','search')">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts report_modify" onclick="change_form('report','modify')">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts command_report" onclick="reset('report')">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts delete_report del_form" onclick="del('report')">
+                            <ion-icon name="trash-bin-outline"></ion-icon>
+                        </div>
+                        <div class="icon_form elts report_action" onclick="add('report')">
+                            <ion-icon name="cloud-done-outline"></ion-icon>
+                        </div>
+                    </div>
+                </header>
+                <form class="form_report form_create elts"> 
+                    <section class="report_tab_0 report_tab elts view_report">
+                        <div class="space_form elts">
+                            <h2>Information</h2>
+                            <div class="box_ipts elts">
+                                <input type="text" class="ipt_report_1" readonly>
+                                <input type="date" class="ipt_report_2" >
+                                <input type="week" class="ipt_report_3" >
+                                <input type="month" class="ipt_report_4" >
+                            </div>
+                        </div>
+                         <div class="space_form elts">
+                            <h2>Content</h2>
+                            <div class="box_ipts elts">
+                                <input type="text" class="ipt_report_5" placeholder="Enter IBOV">
+                                <input type="text" class="ipt_report_6" placeholder="Enter M. IBOV">
+                                <input type="text" class="ipt_report_7" placeholder="Enter IFIX">
+                                <input type="text" class="ipt_report_8" placeholder="Enter M. IFIX">
+                            </div>
+                            <div class="box_ipts elts">
+                                <input type="text" class="ipt_report_9" placeholder="Enter S&P 500">
+                                <input type="text" class="ipt_report_10" placeholder="Enter M. S&P 500">
+                                <input type="text" class="ipt_report_11" placeholder="Enter PREF">
+                                <input type="text" class="ipt_report_12" placeholder="Enter M. PREF">
+                            </div>
+                            <div class="box_ipts elts">
+                                <input type="text" class="ipt_report_13" placeholder="Enter Dolar">
+                                <input type="text" class="ipt_report_14" placeholder="Enter M. Dolar">
+                                <input type="text" class="ipt_report_15" placeholder="Enter IPCA">
+                                <input type="text" class="ipt_report_16" placeholder="Enter Selic">
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </section>
+
+            <ul class="menu_create elts">
+                <div class="nav_create base_nav slt_create" onclick="change_tab('create','base')">
+                    <img src="../../img/create/base.png" alt="">
+                </div>
+                <div class="nav_create earning_nav" onclick="change_tab('create','earning')">
+                    <img src="../../img/create/earning.png" alt="">
+                </div>
+                <div class="nav_create flow_nav" onclick="change_tab('create','flow')">
+                    <img src="../../img/create/flow.png" alt="">
+                </div>
+                <div class="nav_create record_nav" onclick="change_tab('create','record')">
+                    <img src="../../img/create/record.png" alt="">
+                </div>
+                <div class="nav_create report_nav" onclick="change_tab('create','report')">
+                    <img src="../../img/create/report.png" alt="">
+                </div>
+            </ul>
+        </section>
+
+    </main>
+
+    
+    <script src="../../app/action/page.js"></script>
+    <script src="../../app/action/form.js"></script>
+    <script src="../../app/base/push.js"></script>
+    <script src="../../app/action/search.js"></script>
+    <script src="../../app/action/add.js"></script>
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

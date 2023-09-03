@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../style/page/style.css">
+    <link rel="stylesheet" href="../../style/home/style.css">
+</head>
+<body class="" page="home">
+    <nav class="menu elts">
+        <div class="box_logo elts">
+            <img class="logo_img" src="../../img/menu/logo_black.png" alt="">
+            <span>IDS</span>
+        </div>
+        <ul class="nav_icons elts">
+            <li class="icon mark elts" onclick="change_page('home')">
+                <ion-icon id="nav" name="home-outline"></ion-icon>
+                <span>Home</span>
+            </li>
+            <li class="icon elts" onclick="change_page('money')">
+                <ion-icon id="nav" name="cash-outline"></ion-icon>
+                <span>Money</span>
+            </li>
+            <li class="icon elts" onclick="change_page('create')">
+                <ion-icon id="nav" name="add-outline"></ion-icon>
+                <span>Create</span>
+            </li>
+            <li class="icon elts" onclick="change_page('data')">
+                <ion-icon id="nav" name="albums-outline"></ion-icon>
+                <span>Data</span>
+            </li>
+        </ul>
+        <ul class="nav_action elts">
+            <li class="icon elts" id="nv_contrast" onclick="change_colors('data')">
+                <ion-icon id="nav" name="contrast-outline"></ion-icon>
+                <span>Contrast</span>
+            </li>
+            <li class="icon elts" onclick="">
+                <ion-icon id="nav" name="log-out-outline"></ion-icon>
+                <span>Log_Out</span>
+            </li>
+        </ul>
+    </nav>
+    <main class="box_page elts">
+        <header class="header_page elts">
+            <dix class="box_header elts">
+                <h2>Home</h2>
+                <div class="box_search elts">
+                    <ion-icon id='icon_search' name="search-outline"></ion-icon>
+                    <input type="search" id="ipt_search_home" placeholder="Search..." onkeyup="search_page('home')">
+                </div>
+            </dix>
+
+            <ul class="box_btn elts">
+                <li class="btn_menu elts" onclick="active_menu()">
+                    <ion-icon id='icn_menu' name="menu-outline"></ion-icon>
+                </li>
+                <li class="btn_menu elts" onclick="">
+                    <ion-icon name="cellular-outline"></ion-icon>
+                </li>
+                <li class="btn_menu btn_calc elts" onclick="active_calc()">
+                    <ion-icon id='icn_calc' name="calculator-outline"></ion-icon>
+                </li>
+                <div class="img_header">
+                    <img src="../../img/menu/icon.png" alt="">
+                </div>
+            </ul>
+
+            
+        </header>
+
+        <section class="camp_calculator elts" >
+            <form class="calculator" name="calc">
+                <input type="text" readonly class="value" name="txt">
+                <span class="num clear" onclick="calc.txt.value=''">Clear</span>
+                <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+                <span class="num" onclick="document.calc.txt.value +='*'">*</span>
+                <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+                <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+                <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+                <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+                <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+                <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+                <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+                <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+                <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+                <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+                <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+                <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+                <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+                <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+                <span class="num equal" onclick="document.calc.txt.value =eval(calc.txt.value)">=</span>
+            </form>
+        </section>
+
+        <section class="camp_search elts" id="camp_search_home">
+            <header class="header_search elts">
+                <h2>Search...</h2>
+                <div class="exit_search elts" onclick="search_page('home','exit')">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+            </header>
+            <div class="content_search elts" id="content_search_home">
+             
+            </div>
+            
+        </section>
+
+        <section class="content_page elts">
+            <div class="space_home elts">
+                <div class="box_info_home elts">
+                    <div class="info_home elts">
+                        <ion-icon id="icon_info" name="wallet-outline"></ion-icon>
+                        <h2 id="value_home_1"></h2>
+                        <span>Total Wallet</span>
+                        <div class="btn_info" onclick="">
+                            <ion-icon id="info" name="ellipsis-vertical-outline"></ion-icon>
+                        </div>
+                    </div>
+                    
+                    <div class="info_home elts">
+                        <ion-icon id="icon_info" name="server-outline"></ion-icon>        
+                        <h2 id="value_home_2"></h2>
+                        <span>Total Earninng</span>
+                        <div class="btn_info" onclick="">
+                            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="info_home elts">
+                        <ion-icon id="icon_info" name="trending-up-outline"></ion-icon>
+                        <h2 id="value_home_3"></h2>
+                        <span>Total Input</span>
+                        <div class="btn_info" onclick="">
+                            <ion-icon id="info" name="ellipsis-vertical-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="info_home elts">
+                        <ion-icon id="icon_info" name="trending-down-outline"></ion-icon>
+                        <h2 id="value_home_4"></h2>
+                        <span>Total Output</span>
+                        <div class="btn_info" onclick="">
+                            <ion-icon id="info" name="ellipsis-vertical-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="graphic_home elts">
+                    <canvas id="myChart_home"></canvas>
+                </div>
+            </div>
+
+            <div class="space_recent elts">
+                <div class="recent_home recent_flow_home elts"></div>
+                <div class="recent_home recent_earning_home elts"></div>
+                <div class="recent_home recent_record_home elts"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../app/base/graphic.js"></script>
+    <script src="../../app/base/count.js"></script>
+    <script src="../../app/base/push.js"></script>
+    <script src="../../app/action/page.js"></script>
+    <script src="../../app/action/search.js"></script>
+    <script src="../../app/action/change.js"></script>
+    <script src="../../app/action/start.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+</body>
+</html>
